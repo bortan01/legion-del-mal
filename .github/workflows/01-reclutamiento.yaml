@@ -1,13 +1,22 @@
 name: Reclutamiento de Agente
 on: push
 
-jobs:  
-    reporte-de-reclutamiento:
-        runs-on: ubuntu-latest
-        steps: 
-            - name: El agente se presenta
-              run: echo "Soy Boris, el líder de la legión del mal"
-                
-        
-        
-            
+jobs:
+  reporte-de-reclutamiento:
+    runs-on: ubuntu-latest
+    steps:
+      - name: El agente se presenta
+        run: echo "Soy Boris, el líder de la legión del mal"
+
+      - name: Reporte de identidad
+        run: |
+          echo "Reporte de identidad"
+          echo "======================="
+          echo ""
+          echo "nombre clave ${{github.actor}}"
+          echo ""
+          echo "contexto de GitHug"
+          echo ""
+          echo "Repo: ${{github.repository}}"
+          echo "Operación: ${{github.sha}}"
+          echo "Meta Data: ${{toJson(github)}}"
