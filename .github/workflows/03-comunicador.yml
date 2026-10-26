@@ -33,10 +33,21 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Instalar el transmisor de la legión
+        run: sudo apt-get install -y cowsay
+
       - name: El Agente llega a la fortaleza
         run: |
-          echo "Inputs:"
+          echo "========================="
+          echo "      Transmision Interceptada"
+          echo "========================="
           echo ""
-          echo "Villano: ${{inputs.villanos}}"
-          echo "Nivel: ${{inputs.prioridad}}"
-          echo "Mensaje: ${{inputs.mensaje}}"
+          echo "De: ${{inputs.villanos}}"
+          echo ""
+          echo "Fecha: $(date -u +"%d/%m/%Y - %H: %M UTC")"
+          echo "---------MENSAJE---------"
+          cowsay -f eyes "${{inputs.mensaje}}"
+          echo ""
+          echo "----${{inputs.villanos}}"
+          echo "...."
+
