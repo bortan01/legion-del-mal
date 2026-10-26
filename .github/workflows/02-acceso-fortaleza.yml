@@ -1,0 +1,15 @@
+name: Acceso a la fortaleza
+
+on: push
+
+jobs:
+  acceso-a-la-base:
+    runs-on: ubuntu-latest
+    steps:
+      - name: El Agente llega a la fortaleza
+        run: |
+            echo "Agente ${{github.actor}} llega a la fortaleza"
+            echo ""
+            echo "Buscar los archivos de la Legion"
+            ls -la
+            echo "❌ pero que pasó? no hay nada"
